@@ -13,6 +13,7 @@ export const handle: Handle = async ({ event, resolve }) => {
 
     if (host && redirectDomains.includes(host)) {
         const newUrl = `https://${mainDomain}${event.url.pathname}${event.url.search}`;
+        console.log(newUrl);
 
         return new Response(null, {
             status: 301,
