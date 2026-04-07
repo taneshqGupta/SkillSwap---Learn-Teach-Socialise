@@ -41,10 +41,16 @@ async fn main() -> Result<(), AppError> {
     })?;
     tracing::info!("Successfully connected to database.");
 
+    let frontend_url = std::env::var("FRONTEND_URL").expect("FRONTEND_URL must be set");
+    tracing::info!("Allowing CORS from: {}", frontend_url);
+    
     let cors = CorsLayer::new()
         .allow_origin([
-            "http://localhost:3000".parse().unwrap(),
-            std::env::var("FRONTEND_URL").unwrap().parse().unwrap(),
+            std::env::var("FRONTEND_URL")
+                .expect("FRONTEND_URL must be set")
+                .parse()
+                .expect("FRONTEND_URL must be a valid origin"),
+            // "http://localhost:3000".parse().unwrap(),
         ])
         .allow_methods([Method::GET, Method::POST, Method::DELETE])
         .allow_headers([
