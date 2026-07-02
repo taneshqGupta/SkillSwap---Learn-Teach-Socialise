@@ -4,7 +4,7 @@
 
 #### Q: How to set it up and get it running?
 ###### Ans: No Set-Up required at all!
-######      Just go to [skillswap.taneshq.in](skillswap.taneshq.in)
+######      Just go to [https://skillswap.taneshq.in](https://skillswap.taneshq.in)
 
 ---
 #### Q: What social problem does _Skill-Swap_ Address?
